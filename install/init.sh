@@ -1,8 +1,7 @@
-echo "Let's get this party started! What's your hostname? e.g. 'blue-snake.3pp.io': "
-read HOST_NAME
-echo "You entered: $HOST_NAME"
-hostname $HOST_NAME
+apt-get update
+apt-get install -y pwgen
 MYSQL_PASSWORD=`pwgen -c -n -1 12`
+HOST_NAME=`hostname -f`
 sed -i 's/mailuserpass/$MYSQL_PASSWORD/g' /install/init.mysql
 sed -i 's/mailuserpass/$MYSQL_PASSWORD/g' /install/dovecot/dovecot-sql.conf.ext
 sed -i 's/mailuserpass/$MYSQL_PASSWORD/g' /install/postfix/*
@@ -13,7 +12,6 @@ echo "mysql-server mysql-server/root_password password $MYSQL_PASSWORD" | debcon
 echo "mysql-server mysql-server/root_password_again password $MYSQL_PASSWORD" | debconf-set-selections
 echo "postfix postfix/mailname string $HOST_NAME" | debconf-set-selections
 echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
-apt-get update
 apt-get install -y postfix postfix-mysql dovecot-core dovecot-imapd dovecot-pop3d dovecot-lmtpd dovecot-mysql mysql-server
 
 #MySQL

@@ -1,4 +1,5 @@
 mail
 ====
 
-untested; also: Don't use this as your mailserver without overwriting all the passwords and regenerating the dovecot cert!
+sudo docker build .
+sudo docker run -i -t -h [FQDN] [imageId] /bin/bash /install/init.sh
