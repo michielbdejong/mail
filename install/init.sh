@@ -1,5 +1,3 @@
-apt-get update
-apt-get install -y pwgen
 MYSQL_PASSWORD=`pwgen -c -n -1 12`
 HOST_NAME=`hostname -f`
 sed -i 's/mailuserpass/$MYSQL_PASSWORD/g' /install/init.mysql
@@ -26,8 +24,8 @@ cp /install/postfix/mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias
 cp /install/postfix/master.cf /etc/postfix/master.cf
 
 #Dovecot
-cp /dovecot/dovecot.conf /etc/dovecot/dovecot.conf
-cp /dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
+cp /install/dovecot/dovecot.conf /etc/dovecot/dovecot.conf
+cp /install/dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
 mkdir -p /var/mail/vhosts/$HOST_NAME
 groupadd -g 5000 vmail
 useradd -g vmail -u 5000 vmail -d /var/mail
@@ -40,5 +38,5 @@ chmod -R o-rwx /etc/dovecot
 cp /install/dovecot/conf.d/10-master.conf /etc/dovecot/conf.d/10-master.conf
 cp /install/dovecot/mkcert.sh /mkcert.sh
 cp /install/dovecot/dovecot-openssl.cnf /dovecot-openssl.cnf
-sh /install/mkcert.sh
+sh /install/dovecot/mkcert.sh
 cp /install/dovecot/conf.d/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
