@@ -22,10 +22,10 @@ prompt = no
 OU=IMAP server
 
 # Common Name (*.example.com is also possible)
-CN=imap.example.com
+CN=hostname.com
 
 # E-mail contact
-emailAddress=postmaster@example.com
+emailAddress=postmaster@hostname.com
 
 [ cert_type ]
 nsCertType = server
