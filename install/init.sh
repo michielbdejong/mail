@@ -1,11 +1,11 @@
 MYSQL_PASSWORD=`pwgen -c -n -1 12`
 HOST_NAME=`hostname -f`
-sed -i 's/mailuserpass/$MYSQL_PASSWORD/g' /install/init.mysql
-sed -i 's/mailuserpass/$MYSQL_PASSWORD/g' /install/dovecot/dovecot-sql.conf.ext
-sed -i 's/mailuserpass/$MYSQL_PASSWORD/g' /install/postfix/*
-sed -i 's/hostname.com/$HOST_NAME/g' /install/init.mysql
-sed -i 's/hostname.com/$HOST_NAME/g' /install/postfix/*
-sed -i 's/hostname.com/$HOST_NAME/g' /install/dovecot/dovecot-openssl.cnf
+sed -i "s/mailuserpass/$MYSQL_PASSWORD/g" /install/init.mysql
+sed -i "s/mailuserpass/$MYSQL_PASSWORD/g" /install/dovecot/dovecot-sql.conf.ext
+sed -i "s/mailuserpass/$MYSQL_PASSWORD/g" /install/postfix/*
+sed -i "s/hostname.com/$HOST_NAME/g" /install/init.mysql
+sed -i "s/hostname.com/$HOST_NAME/g" /install/postfix/*
+sed -i "s/hostname.com/$HOST_NAME/g" /install/dovecot/dovecot-openssl.cnf
 echo "mysql-server mysql-server/root_password password $MYSQL_PASSWORD" | debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $MYSQL_PASSWORD" | debconf-set-selections
 echo "postfix postfix/mailname string $HOST_NAME" | debconf-set-selections
