@@ -1,6 +1,8 @@
 MYSQL_PASSWORD=`pwgen -c -n -1 12`
+MICHIEL_PASSWORD=`pwgen -c -n -1 12`
 HOST_NAME=`hostname -f`
 sed -i "s/mailuserpass/$MYSQL_PASSWORD/g" /install/init.mysql
+sed -i "s/michielpassword/$MICHIEL_PASSWORD/g" /install/init.mysql
 sed -i "s/mailuserpass/$MYSQL_PASSWORD/g" /install/dovecot/dovecot-sql.conf.ext
 sed -i "s/mailuserpass/$MYSQL_PASSWORD/g" /install/postfix/*
 sed -i "s/hostname.com/$HOST_NAME/g" /install/init.mysql
@@ -39,3 +41,5 @@ chown -R vmail:dovecot /etc/dovecot
 chmod -R o-rwx /etc/dovecot
 cp /install/dovecot/conf.d/10-master.conf /etc/dovecot/conf.d/10-master.conf
 cp /install/dovecot/conf.d/10-ssl.conf /etc/dovecot/conf.d/10-ssl.conf
+
+echo Password for anything at michielbdejong.com set to $MICHIEL_PASSWORD
