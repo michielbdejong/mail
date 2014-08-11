@@ -1,1 +1,2 @@
-service mysql start && service postfix start
+service mysql start
+/usr/sbin/postfix
