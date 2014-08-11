@@ -3,10 +3,10 @@ RUN apt-get update
 RUN apt-get install -y pwgen
 ADD ./install /install
 
-EXPORT 25
-EXPORT 465
-EXPORT 993
-EXPORT 995
+EXPOSE 25
+EXPOSE 465
+EXPOSE 993
+EXPOSE 995
 
 # Now run:
 # docker run -i -t -h blue-turtle.3pp.io michielbdejong/mail /bin/bash /install/init.sh
@@ -19,4 +19,4 @@ EXPORT 995
 # and then:
 # docker run -i -t michielbdejong/mail /bin/bash /install/run.sh
 #
-# (this will then run the mailserver)
+# (this will then run the mailserver
