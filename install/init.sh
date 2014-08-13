@@ -1,3 +1,4 @@
+#!/bin/sh
 MYSQL_PASSWORD=`pwgen -c -n -1 12`
 MICHIEL_PASSWORD=`pwgen -c -n -1 12`
 HOST_NAME=`hostname -f`
