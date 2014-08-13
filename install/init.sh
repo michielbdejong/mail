@@ -22,10 +22,10 @@ apt-get install -y postfix postfix-mysql dovecot-core dovecot-imapd dovecot-pop3
 /etc/init.d/mysql start && cat /install/init.mysql | mysql -p$MYSQL_PASSWORD mailserver
 
 #Postfix
-cp /install/postfix/main.cf /etc/postfix/main.cf
-cp /install/postfix/mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
-cp /install/postfix/mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
-cp /install/postfix/mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
+#cp /install/postfix/main.cf /etc/postfix/main.cf
+#cp /install/postfix/mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
+#cp /install/postfix/mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
+#cp /install/postfix/mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
 # cp /install/postfix/master.cf /etc/postfix/master.cf
 
 #Dovecot
