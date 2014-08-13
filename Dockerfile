@@ -6,6 +6,7 @@ ADD ./install /install
 
 EXPOSE 25
 EXPOSE 465
+EXPOSE 587
 EXPOSE 993
 EXPOSE 995
 
