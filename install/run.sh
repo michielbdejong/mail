@@ -1,2 +1,4 @@
 service mysql start
-/usr/sbin/postfix
+service postfix start
+#trick to keep daemon running (is there a better way?):
+tail -f /var/log/*
