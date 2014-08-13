@@ -26,7 +26,7 @@ cp /install/postfix/main.cf /etc/postfix/main.cf
 cp /install/postfix/mysql-virtual-mailbox-domains.cf /etc/postfix/mysql-virtual-mailbox-domains.cf
 cp /install/postfix/mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-maps.cf
 cp /install/postfix/mysql-virtual-alias-maps.cf /etc/postfix/mysql-virtual-alias-maps.cf
-cp /install/postfix/master.cf /etc/postfix/master.cf
+# cp /install/postfix/master.cf /etc/postfix/master.cf
 
 #Dovecot
 cp /install/dovecot/dovecot.conf /etc/dovecot/dovecot.conf
